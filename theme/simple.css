@@ -27,6 +27,7 @@
 /* Set top margin in case there is no heading */
 #page-body {
 	margin-top:20px;
+	margin-bottom:20px;
 }
 
 .navbar-user {
