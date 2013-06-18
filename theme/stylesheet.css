@@ -1,13 +1,3 @@
-/*  phpBB3 Style Sheet
-    --------------------------------------------------------------
-	Style name:			proBoot by Shibu Lijack
-	Based on style:		
-	Original author:	Tom Beddard ( http://www.subblue.com/ )
-	Modified by:		phpBB Group ( http://www.phpbb.com/ )
-	Customised by:		Shibu Lijack
-    --------------------------------------------------------------
-*/
-
 @import url("bootstrap/css/bootstrap.css");
 @import url("bootstrap/css/bootstrap-responsive.css");
 @import url("simple.css");
