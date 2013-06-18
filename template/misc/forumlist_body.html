@@ -1,0 +1,54 @@
+
+<!-- BEGIN forumrow -->
+  <!-- IF forumrow.S_UNREAD_FORUM -->
+  	<!-- DEFINE $UNREAD = 'unread' -->
+  <!-- ENDIF -->
+
+	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW  or forumrow.S_NO_CAT  -->
+		<table class="forum-list table table-striped">
+			<thead>
+				<tr>
+					<th class="title"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
+					<th class="topics">{L_TOPICS}</th>
+					<th class="posts">{L_POSTS}</th>
+					<th class="lastpost"><span>{L_LAST_POST}</span></th>
+				</tr>
+			</thead>
+			<tbody>
+	<!-- ENDIF -->
+
+	<!-- IF not forumrow.S_IS_CAT -->
+		<tr class="{$UNREAD}">
+			<td>
+				<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
+				<a href="{forumrow.U_VIEWFORUM}" class="title">{forumrow.FORUM_NAME}</a>
+				<!-- IF forumrow.U_UNAPPROVED_TOPICS --> <a class="unapproved-topics" href="{forumrow.U_UNAPPROVED_TOPICS}">Unapproved topics</a><!-- ENDIF -->
+				<!-- IF forumrow.FORUM_DESC --><br><span class="muted">{forumrow.FORUM_DESC}</span><!-- ENDIF -->
+				<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br>{forumrow.L_SUBFORUM_STR} {forumrow.SUBFORUMS}<!-- ENDIF -->
+			</td>
+			<!-- IF forumrow.CLICKS -->
+				<td><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></td>
+			<!-- ELSEIF not forumrow.S_IS_LINK -->
+				<td><span>{forumrow.TOPICS}</span></td>
+				<td><span>{forumrow.POSTS}</span></td>
+				<td>
+					<!-- IF forumrow.LAST_POST_TIME -->
+						<a href="{forumrow.U_LAST_POST}" title="{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER}">{forumrow.LAST_POST_TIME}</a>
+					<!-- ELSE -->
+						{L_NO_POSTS}
+					<!-- ENDIF -->
+				</td>
+			<!-- ENDIF -->
+		</tr>
+	<!-- ENDIF -->
+
+	<!-- IF forumrow.S_LAST_ROW -->
+			</tbody>
+		</table>
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+	<p>
+		<strong>{L_NO_FORUMS}</strong>
+	</p>
+<!-- END forumrow -->

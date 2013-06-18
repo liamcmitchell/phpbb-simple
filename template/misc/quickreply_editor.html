@@ -1,0 +1,10 @@
+<!-- IF S_QUICK_REPLY -->
+	<form method="post" action="{U_QR_ACTION}">
+		<h3>{L_QUICKREPLY}</h3>
+		<textarea name="message" rows="4" tabindex="3" class="input-block-level"></textarea>
+		{S_FORM_TOKEN}
+		{QR_HIDDEN_FIELDS}
+		<button type="submit" name="post" accesskey="s" tabindex="6" class="btn btn-primary">{L_SUBMIT}</button>
+		<button type="submit" name="full_editor" accesskey="f" tabindex="7" class="btn">{L_FULL_EDITOR}</button>
+	</form>
+<!-- ENDIF -->

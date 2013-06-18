@@ -1,0 +1,34 @@
+<!-- IF .draftrow -->
+  <div class="row-fluid">
+  	<div class="span8 offset2">
+			<h3>{L_LOAD_DRAFT}</h3>
+			<p>{L_LOAD_DRAFT_EXPLAIN}</p>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{L_LOAD_DRAFT}</th>
+						<th>{L_SAVE_DATE}</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<!-- BEGIN draftrow -->
+						<tr>
+							<td>
+								<a href="{draftrow.U_INSERT}" title="{L_LOAD_DRAFT}" class="topictitle">{draftrow.DRAFT_SUBJECT}</a>
+								<!-- IF not S_PRIVMSGS and draftrow.S_LINK_FORUM -->
+									{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+								<!-- ENDIF -->
+							</td>
+							<td>
+								{draftrow.DATE}
+							</td>
+						</tr>
+					<!-- END draftrow -->
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+<!-- ENDIF -->

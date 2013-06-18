@@ -41,12 +41,16 @@
 		<div class="content">{MESSAGE}</div>
 
 		<!-- IF S_HAS_ATTACHMENTS -->
-		<dl class="attachbox">
-			<dt>{L_ATTACHMENTS}</dt>
-			<!-- BEGIN attachment -->
-			<dd>{attachment.DISPLAY_ATTACHMENT}</dd>
-			<!-- END attachment -->
-		</dl>
+			<table class="attachments table table-striped">
+				<thead>
+					<th colspan="3">{L_ATTACHMENTS}</th>
+				</thead>
+				<tbody>
+					<!-- BEGIN attachment -->
+					  {attachment.DISPLAY_ATTACHMENT}
+					<!-- END attachment -->
+				</tbody>
+			</table>
 		<!-- ENDIF -->
 
 		<!-- IF S_DISPLAY_NOTICE -->

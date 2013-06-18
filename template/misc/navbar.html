@@ -1,0 +1,53 @@
+<div class="navbar navbar-static-top">
+  <div class="navbar-inner">
+
+    <a class="brand" href="{U_INDEX}">{SITENAME}</a>
+    
+    <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
+      <div class="navbar-user btn-group pull-right">
+        <a class="btn dropdown-toggle <!-- IF S_USER_NEW_PRIVMSG -->btn-info<!-- ENDIF -->" data-toggle="dropdown" href="#"><i class="icon-user"></i> {S_USERNAME} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <!-- IF S_DISPLAY_PM --> 
+            <li>    
+              <a href="{U_PRIVATEMSGS}"><i class="icon-envelope "></i>
+                <!-- IF S_USER_NEW_PRIVMSG -->
+                  <span class="label label-info">{PRIVATE_MESSAGE_INFO}</span>
+                <!-- ELSE -->
+                  {PRIVATE_MESSAGE_INFO}
+                <!-- ENDIF -->
+              </a>
+            </li>
+          <!-- ENDIF -->
+          <!-- IF S_DISPLAY_SEARCH --> 
+            <li><a href="{U_SEARCH_SELF}"><i class="icon-file "></i> {L_SEARCH_SELF}</a></li>
+          <!-- ENDIF -->
+          <li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-wrench "></i> {L_PROFILE}</a></li>
+          <!-- IF U_MCP -->
+            <li><a href="{U_MCP}"><i class="icon-wrench "></i> {L_MCP}</a></li>
+          <!-- ENDIF -->
+          <!-- IF U_ACP -->
+            <li><a href="{U_ACP}"><i class="icon-wrench "></i> {L_ACP}</a></li>
+          <!-- ENDIF -->
+          <li class="divider"></li>      
+          <li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign"></i> {L_LOGIN_LOGOUT}</a></li>
+        </ul>
+      </div>
+    <!-- ELSE -->
+      <ul class="navbar-user nav pull-right">
+        <li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-user"></i> {L_LOGIN_LOGOUT}</a></li>
+      </ul>
+    <!-- ENDIF -->
+
+    <!-- IF S_DISPLAY_SEARCH -->
+      <form method="get" action="<!-- IF S_SEARCHBOX_ACTION -->{S_SEARCHBOX_ACTION}<!-- ELSE -->{U_SEARCH}<!-- ENDIF -->" class="navbar-search pull-right">
+        <input name="keywords" type="text" size="20" class="search-query input-medium" placeholder="<!-- IF S_VIEWTOPIC -->{L_SEARCH_TOPIC}<!-- ELSEIF S_VIEWFORUM -->{L_SEARCH_FORUM}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->">
+        <!-- IF S_VIEWTOPIC or S_VIEWFORUM -->
+          {S_SEARCH_LOCAL_HIDDEN_FIELDS}
+        <!-- ELSE -->
+          {S_SEARCH_HIDDEN_FIELDS}
+        <!-- ENDIF -->
+      </form>
+    <!-- ENDIF -->
+
+  </div>
+</div>

@@ -1,0 +1,91 @@
+/* Override glyphicon location so phpBB can handle it. */
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("./bootstrap/img/glyphicons-halflings.png");
+}
+
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:focus > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > li > a:focus > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: url("./bootstrap/img/glyphicons-halflings-white.png");
+}
+
+/* Set top margin in case there is no heading */
+#page-body {
+	margin-top:20px;
+}
+
+.navbar-user {
+	margin-left:20px;
+}
+
+.navbar-form .input-prepend,
+.navbar-form .input-append {
+	margin-bottom:0;
+}
+
+.unread .title {
+	font-weight:bold;
+}
+
+.forum-list th.title,
+.topic-list th.title {
+	width:50%;
+}
+
+.pagination {
+	margin:20px 0;
+}
+
+.post {
+	margin:20px 0;
+}
+
+.post-meta .unapproved,
+.post-meta .reported {
+	clear:both;
+}
+
+.margin-bottom {
+	margin-bottom:10px;
+}
+
+.attachments td {
+	vertical-align: middle;
+}
+
+.attachments img {
+	max-height: 200px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+	/* Original 30px too big */
+	.row-fluid [class*="span"] {
+		min-height:20px;
+	}
+
+	.post-meta .author {
+		float:left;
+	}
+
+	.post-meta .date {
+		float:right;
+	}
+
+}

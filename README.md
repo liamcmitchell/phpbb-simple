@@ -1,16 +1,12 @@
-proBoot
+Simple
 =======
 
-phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framework.
+Simple phpBB3 theme using the [Bootstrap](http://twitter.github.com/bootstrap/) framework. The intention was to completely rewrite the base theme to be as clean and generic as possible. All original CSS and images have been removed. The only images are [Glyphicons](http://glyphicons.com/) icons that come with Bootstrap.
 
-**Base style:** proSilver
+This is a work in progress. Because so much of the original HTML has been modified, some functionality may be broken.
 
-**Style Version:** 2.0
+[proBoot](http://shibulijack.github.io/proBoot/) was used as a base to start with.
+
+**Style Version:** 1.0
 
 **phpBB version:** phpBB 3.0.11
-
-**Demo:** [http://cegtechforum.com/forum/](http://cegtechforum.com/forum/)
-
-**Download:** [http://shibulijack.github.com/proBoot/](http://shibulijack.github.com/proBoot/)
-
-**Blog post:** [http://shibulijack.wordpress.com/2012/12/06/proboot-bootstrap-theme-for-phpbb3](http://shibulijack.wordpress.com/2012/12/06/proboot-bootstrap-theme-for-phpbb3)
