@@ -76,6 +76,14 @@
 	max-height: 200px;
 }
 
+@media (min-width: 768px) {
+
+	.post-meta {
+		text-align: right;
+	}
+
+}
+
 /* Fix inconsistent title margin */
 @media (max-width: 979px) {
 
