@@ -1,133 +1,132 @@
 <!-- INCLUDE misc/overall_header.html -->
 
-<div class="page-header">
+<div class="row-fluid">
+	<div class="span8 offset2">
 
-	<!-- IF U_MCP or U_MARK_FORUMS or S_WATCH_FORUM_LINK -->
-		<div class="btn-group pull-right">
-			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
-		    <i class="icon-cog"></i> <span class="caret"></span>
-		  </a>
-		  <ul class="dropdown-menu">
-		  	<!-- IF S_WATCH_FORUM_LINK -->
-		  		<li><a href="{S_WATCH_FORUM_LINK}"><i class="icon-eye-open"></i> {S_WATCH_FORUM_TITLE}</a></li>
-		  	<!-- ENDIF -->
-		  	<!-- IF U_MARK_FORUMS -->
-					<li><a href="{U_MARK_FORUMS}"><i class="icon-eye-close"></i> {L_MARK_FORUMS_READ}</a></li>
-				<!-- ENDIF -->
-		  	<!-- IF U_MCP -->
-					<li>
-						<a href="{U_MCP}"><i class="icon-wrench"></i> {L_MCP}</a></li>
-					</li>
-				<!-- ENDIF -->
-			</ul>
-		</div>
-	<!-- ENDIF -->
-
-	<h1>{FORUM_NAME}<!-- IF FORUM_DESC --> <small>{FORUM_DESC}</small><!-- ENDIF --></h1>
-</div>
-
-<!-- INCLUDE misc/breadcrumb.html -->
-
-<!-- IF MODERATORS or U_MCP -->
-	<div>
-		<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</p><!-- ENDIF -->
-	</div>
-<!-- ENDIF -->
-
-<!-- INCLUDE misc/rules.html -->
-
-<!-- IF S_HAS_SUBFORUM -->
-	<!-- INCLUDE misc/forumlist_body.html -->
-<!-- ENDIF -->
-
-<!-- IF S_NO_READ_ACCESS -->
-
-	<div class="row-fluid">
-		<div class="well">
-			<strong>{L_NO_READ_ACCESS}</strong>
-		</div>
-	</div>
-
-<!-- ENDIF -->
-
-<!-- BEGIN topicrow -->
-
-	<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW -->
-		</ul>
-		</div>
-	</div>
-	<!-- ENDIF -->
-
-	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->		
-		<table class="topic-list table table-striped">
-		<thead>
-			<tr>
-				
-					<th class="title"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
-					<th class="posts">{L_REPLIES}</th>
-					<th class="views">{L_VIEWS}</th>
-					<th class="lastpost"><span>{L_LAST_POST}</span></th>
-				
-			</tr>
-		</thead>
-		<tbody>
-	<!-- ENDIF -->
-		<!-- IF topicrow.S_TOPIC_REPORTED --><!-- ENDIF -->
-		<!-- IF topicrow.S_UNREAD_TOPIC -->
-			<!-- DEFINE $UNREAD = 'unread' -->
-		<!-- ENDIF -->
-		<tr class="{$UNREAD}">
-				<td>
-					<div class="pull-right">
-						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-							<span><a href="{topicrow.U_MCP_QUEUE}" title="Unapproved content"><i class="icon-question-sign"></i></a></span>
-						<!-- ENDIF -->
-						<!-- IF topicrow.S_TOPIC_REPORTED -->
-							<span><a href="{topicrow.U_MCP_REPORT}" title="Reported content"><i class="icon-exclamation-sign"></i></a></span>
-						<!-- ENDIF -->
-					</div>
-					<!-- IF topicrow.S_POST_GLOBAL -->
-						<i class="icon-globe"></i>
-					<!-- ENDIF -->
-					<!-- IF topicrow.S_POST_ANNOUNCE -->
-						<i class="icon-bell"></i>
-					<!-- ENDIF -->
-					<!-- IF topicrow.S_POST_STICKY -->
-						<i class="icon-flag"></i>
-					<!-- ENDIF -->
-					<a href="{topicrow.U_VIEW_TOPIC}" class="title">{topicrow.TOPIC_TITLE}</a>
-				</td>
-				<td><span>{topicrow.REPLIES}</span></td>
-				<td><span>{topicrow.VIEWS}</span></td>
-				<td>
-					<a href="{topicrow.U_LAST_POST}" title="{topicrow.LAST_POST_SUBJECT} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR}">{topicrow.LAST_POST_TIME}</a>
-				</td>
-			
-		</tr>
-		
-
-	<!-- IF topicrow.S_LAST_ROW -->
-			</tbody>
-		</table>
-	<!-- ENDIF -->
-
-<!-- BEGINELSE -->
-
-	<!-- IF S_IS_POSTABLE -->
 		<div>
-			<strong>{L_NO_TOPICS}</strong>
+
+			<!-- IF U_MCP or U_MARK_FORUMS or S_WATCH_FORUM_LINK -->
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
+				    <i class="icon-cog"></i> <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu">
+				  	<!-- IF S_WATCH_FORUM_LINK -->
+				  		<li><a href="{S_WATCH_FORUM_LINK}"><i class="icon-eye-open"></i> {S_WATCH_FORUM_TITLE}</a></li>
+				  	<!-- ENDIF -->
+				  	<!-- IF U_MARK_FORUMS -->
+							<li><a href="{U_MARK_FORUMS}"><i class="icon-eye-close"></i> {L_MARK_FORUMS_READ}</a></li>
+						<!-- ENDIF -->
+				  	<!-- IF U_MCP -->
+							<li>
+								<a href="{U_MCP}"><i class="icon-wrench"></i> {L_MCP}</a></li>
+							</li>
+						<!-- ENDIF -->
+					</ul>
+				</div>
+			<!-- ENDIF -->
+
+			<h1>{FORUM_NAME}</h1>
+			<!-- IF FORUM_DESC --><p class="lead">{FORUM_DESC}</p><!-- ENDIF -->
 		</div>
-	<!-- ENDIF -->
 
-<!-- END topicrow -->
+		<!-- INCLUDE misc/breadcrumb.html -->
 
-<!-- INCLUDE misc/pagination.html -->
+		<!-- IF MODERATORS or U_MCP -->
+			<div>
+				<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</p><!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
 
-<!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
-	<div class="row-fluid">
-	
+		<!-- INCLUDE misc/rules.html -->
+
+		<!-- IF S_HAS_SUBFORUM -->
+			<!-- INCLUDE misc/forumlist_body.html -->
+		<!-- ENDIF -->
+
+		<!-- IF S_NO_READ_ACCESS -->
+
+			<div class="row-fluid">
+				<div class="well">
+					<strong>{L_NO_READ_ACCESS}</strong>
+				</div>
+			</div>
+
+		<!-- ENDIF -->
+
+		<!-- BEGIN topicrow -->
+
+			<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW -->
+				</ul>
+				</div>
+			</div>
+			<!-- ENDIF -->
+
+			<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->		
+				<table class="topic-list table table-striped">
+				<thead>
+					<tr>
+						
+							<th class="title"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
+							<th class="replies">{L_REPLIES}</th>
+							<th class="views">{L_VIEWS}</th>
+							<th class="last-post"><span>{L_LAST_POST}</span></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+			<!-- ENDIF -->
+				<!-- IF topicrow.S_TOPIC_REPORTED --><!-- ENDIF -->
+				<!-- IF topicrow.S_UNREAD_TOPIC -->
+					<!-- DEFINE $UNREAD = 'unread' -->
+				<!-- ENDIF -->
+				<tr class="{$UNREAD}">
+						<td class="title">
+							<div class="pull-right">
+								<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+									<span><a href="{topicrow.U_MCP_QUEUE}" title="Unapproved content"><i class="icon-question-sign"></i></a></span>
+								<!-- ENDIF -->
+								<!-- IF topicrow.S_TOPIC_REPORTED -->
+									<span><a href="{topicrow.U_MCP_REPORT}" title="Reported content"><i class="icon-exclamation-sign"></i></a></span>
+								<!-- ENDIF -->
+							</div>
+							<!-- IF topicrow.S_POST_GLOBAL -->
+								<i class="icon-globe"></i>
+							<!-- ENDIF -->
+							<!-- IF topicrow.S_POST_ANNOUNCE -->
+								<i class="icon-bell"></i>
+							<!-- ENDIF -->
+							<!-- IF topicrow.S_POST_STICKY -->
+								<i class="icon-flag"></i>
+							<!-- ENDIF -->
+							<a href="{topicrow.U_VIEW_TOPIC}" class="title">{topicrow.TOPIC_TITLE}</a>
+						</td>
+						<td class="replies"><span>{topicrow.REPLIES}</span></td>
+						<td class="views"><span>{topicrow.VIEWS}</span></td>
+						<td class="last-post">
+							<a class="last-post" href="{topicrow.U_LAST_POST}" title="{topicrow.LAST_POST_SUBJECT} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR}">{topicrow.LAST_POST_TIME}</a>
+						</td>
+				</tr>
+
+			<!-- IF topicrow.S_LAST_ROW -->
+					</tbody>
+				</table>
+			<!-- ENDIF -->
+
+		<!-- BEGINELSE -->
+
+			<!-- IF S_IS_POSTABLE -->
+				<p>
+					<strong>{L_NO_TOPICS}</strong>
+				</p>
+			<!-- ENDIF -->
+
+		<!-- END topicrow -->
+
+		<!-- INCLUDE misc/pagination.html -->
+
 		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-			<div class="span4">
+			<div>
 				<!-- IF S_IS_LOCKED -->
 					<a class="btn disabled" href="{U_POST_NEW_TOPIC}">{L_FORUM_LOCKED}</a>
 				<!-- ELSE -->
@@ -136,12 +135,11 @@
 			</div>
 		<!-- ENDIF -->
 
+		<!-- INCLUDE misc/jumpbox.html -->
+
+		<!-- INCLUDE misc/online.html -->
 
 	</div>
-<!-- ENDIF -->
-
-<!-- INCLUDE misc/jumpbox.html -->
-
-<!-- INCLUDE misc/online.html -->
+</div>
 
 <!-- INCLUDE misc/overall_footer.html -->

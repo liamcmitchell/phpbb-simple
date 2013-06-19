@@ -1,27 +1,35 @@
 <!-- INCLUDE misc/overall_header.html -->
 
-<div class="page-header">
-    <h1>{SITENAME} <small>{SITE_DESCRIPTION}</small></h1>
-</div>
+<div class="row-fluid">
+	<div class="span8 offset2">
 
-<!-- INCLUDE misc/forumlist_body.html -->
+		<div>
+	    <h1>{SITENAME}</h1>
+	    <!-- IF SITE_DESCRIPTION --><p class="lead">{SITE_DESCRIPTION}</p><!-- ENDIF -->
+	    <hr>
+		</div>
 
-<!-- IF S_DISPLAY_ONLINE_LIST or (S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST) -->
-	<div class="row-fluid">
-		<!-- IF S_DISPLAY_ONLINE_LIST -->
-			<div class="span6 well">
-				<!-- INCLUDE misc/online.html -->
+		<!-- INCLUDE misc/forumlist_body.html -->
+
+		<!-- IF S_DISPLAY_ONLINE_LIST or (S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST) -->
+			<div class="row-fluid">
+				<!-- IF S_DISPLAY_ONLINE_LIST -->
+					<div class="span6 well">
+						<!-- INCLUDE misc/online.html -->
+					</div>
+				<!-- ENDIF -->
+
+				<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+				  <div class="span6 well">
+						<h3>{L_BIRTHDAYS}</h3>
+						<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+					</div>
+				<!-- ENDIF -->
 			</div>
 		<!-- ENDIF -->
 
-		<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
-		  <div class="span6 well">
-				<h3 class="heading">{L_BIRTHDAYS}</h3>
-				<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
-			</div>
-		<!-- ENDIF -->
 	</div>
-<!-- ENDIF -->
+</div>
 
 
 <!-- INCLUDE misc/overall_footer.html -->

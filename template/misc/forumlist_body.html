@@ -11,7 +11,7 @@
 					<th class="title"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
 					<th class="topics">{L_TOPICS}</th>
 					<th class="posts">{L_POSTS}</th>
-					<th class="lastpost"><span>{L_LAST_POST}</span></th>
+					<th class="last-post"><span>{L_LAST_POST}</span></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,7 +19,7 @@
 
 	<!-- IF not forumrow.S_IS_CAT -->
 		<tr class="{$UNREAD}">
-			<td>
+			<td class="title">
 				<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 				<a href="{forumrow.U_VIEWFORUM}" class="title">{forumrow.FORUM_NAME}</a>
 				<!-- IF forumrow.U_UNAPPROVED_TOPICS --> <a class="unapproved-topics" href="{forumrow.U_UNAPPROVED_TOPICS}">Unapproved topics</a><!-- ENDIF -->
@@ -27,13 +27,13 @@
 				<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br>{forumrow.L_SUBFORUM_STR} {forumrow.SUBFORUMS}<!-- ENDIF -->
 			</td>
 			<!-- IF forumrow.CLICKS -->
-				<td><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></td>
+				<td colspan="3"><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></td>
 			<!-- ELSEIF not forumrow.S_IS_LINK -->
-				<td><span>{forumrow.TOPICS}</span></td>
-				<td><span>{forumrow.POSTS}</span></td>
-				<td>
+				<td class="topics"><span>{forumrow.TOPICS}</span></td>
+				<td class="posts"><span>{forumrow.POSTS}</span></td>
+				<td class="last-post">
 					<!-- IF forumrow.LAST_POST_TIME -->
-						<a href="{forumrow.U_LAST_POST}" title="{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER}">{forumrow.LAST_POST_TIME}</a>
+						<a class="last-post" href="{forumrow.U_LAST_POST}" title="{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER}">{forumrow.LAST_POST_TIME}</a>
 					<!-- ELSE -->
 						{L_NO_POSTS}
 					<!-- ENDIF -->

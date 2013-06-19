@@ -4,11 +4,17 @@
 	<!-- INCLUDE misc/overall_header.html -->
 <!-- ENDIF -->
 
-<div class="row-fluid panel" id="message">
-	<div class="well">
-	<h3 class="box-heading">{MESSAGE_TITLE}</h3>
-	<p>{MESSAGE_TEXT}</p>
-	<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV --><p><a href="{U_SEARCH}" class="{S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a></p><!-- ENDIF -->
+<div class="row-fluid">
+	<div class="span8 offset2">
+		<div class="well">
+
+			<h3>{MESSAGE_TITLE}</h3>
+			<p>{MESSAGE_TEXT}</p>
+			<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV -->
+				<p><a href="{U_SEARCH}" class="{S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a></p>
+			<!-- ENDIF -->
+		</div>
+
 	</div>
 </div>
 

@@ -1,45 +1,50 @@
 <!-- INCLUDE misc/overall_header.html -->
 
-<div class="page-header">
+<div class="row-fluid">
+	<div class="span8 offset2">
+		<div>
 
-	<!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or S_TOPIC_MOD -->
-		<div class="btn-group pull-right">
-			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
-		    <i class="icon-cog"></i> <span class="caret"></span>
-		  </a>
-		  <ul class="dropdown-menu">
-		  	<!-- IF U_WATCH_TOPIC -->
-					<li><a href="{U_WATCH_TOPIC}"><i class="icon-eye-open"></i> {L_WATCH_TOPIC}</a>					</li>
-				<!-- ENDIF -->
-		  	<!-- IF U_BOOKMARK_TOPIC -->
-					<li><a href="{U_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a></li>
-				<!-- ENDIF -->
-		  	<!-- IF U_BUMP_TOPIC -->
-		  		<li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li>
-		  	<!-- ENDIF -->
-		  	<!-- IF S_TOPIC_MOD -->
-					<li><a href="{S_MOD_ACTION}&action=lock">Lock topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=delete_topic">Delete topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=move">Move topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=split">Split topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=merge">Move posts</a></li>
-					<li><a href="{S_MOD_ACTION}&action=merge_topic">Merge topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=fork">Copy topic</a></li>
-					<li><a href="{S_MOD_ACTION}&action=make_normal">Change to standard</a></li>
-					<li><a href="{S_MOD_ACTION}&action=make_announce">Change to announcement</a></li>
-					<li><a href="{S_MOD_ACTION}&action=make_global">Change to global</a></li>
-					<li><a href="{S_MOD_ACTION}&action=topic_logs">View logs</a></li>
-				<!-- ENDIF -->
-			</ul>
+			<!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or S_TOPIC_MOD -->
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
+				    <i class="icon-cog"></i> <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu">
+				  	<!-- IF U_WATCH_TOPIC -->
+							<li><a href="{U_WATCH_TOPIC}"><i class="icon-eye-open"></i> {L_WATCH_TOPIC}</a>					</li>
+						<!-- ENDIF -->
+				  	<!-- IF U_BOOKMARK_TOPIC -->
+							<li><a href="{U_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a></li>
+						<!-- ENDIF -->
+				  	<!-- IF U_BUMP_TOPIC -->
+				  		<li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li>
+				  	<!-- ENDIF -->
+				  	<!-- IF S_TOPIC_MOD -->
+							<li><a href="{S_MOD_ACTION}&action=lock">Lock topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=delete_topic">Delete topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=move">Move topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=split">Split topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=merge">Move posts</a></li>
+							<li><a href="{S_MOD_ACTION}&action=merge_topic">Merge topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=fork">Copy topic</a></li>
+							<li><a href="{S_MOD_ACTION}&action=make_normal">Change to standard</a></li>
+							<li><a href="{S_MOD_ACTION}&action=make_announce">Change to announcement</a></li>
+							<li><a href="{S_MOD_ACTION}&action=make_global">Change to global</a></li>
+							<li><a href="{S_MOD_ACTION}&action=topic_logs">View logs</a></li>
+						<!-- ENDIF -->
+					</ul>
+				</div>
+			<!-- ENDIF -->
+
+			<h1>{TOPIC_TITLE}</h1>
 		</div>
-	<!-- ENDIF -->
 
-	<h1>{TOPIC_TITLE}</h1>
+		<!-- INCLUDE misc/breadcrumb.html -->
+
+		<!-- INCLUDE misc/rules.html -->
+
+	</div>
 </div>
-
-<!-- INCLUDE misc/breadcrumb.html -->
-
-<!-- INCLUDE misc/rules.html -->
 
 <!-- INCLUDE misc/pagination.html -->
 
@@ -143,21 +148,25 @@
 	<!-- END postrow -->
 </div>
 
-<!-- IF not S_IS_BOT and (S_QUICK_REPLY or S_DISPLAY_REPLY_INFO) -->
-	<div class="row-fluid"><div class="span8 offset2">
-		<!-- IF S_QUICK_REPLY -->
-			<!-- INCLUDE misc/quickreply_editor.html -->
-		<!-- ELSE -->
-			<a class="btn <!-- IF S_IS_LOCKED -->disabled<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->">
-				<!-- IF S_IS_LOCKED -->
-					<i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}
-				<!-- ELSE -->
-					<i class="icon-comment icon-white"></i> {L_POST_REPLY}
-				<!-- ENDIF -->
-			</a>
+<div class="row-fluid">
+	<div class="span8 offset2">
+
+		<!-- IF not S_IS_BOT and (S_QUICK_REPLY or S_DISPLAY_REPLY_INFO) -->
+			<!-- IF S_QUICK_REPLY -->
+				<!-- INCLUDE misc/quickreply_editor.html -->
+			<!-- ELSE -->
+				<a class="btn <!-- IF S_IS_LOCKED -->disabled<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->">
+					<!-- IF S_IS_LOCKED -->
+						<i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}
+					<!-- ELSE -->
+						<i class="icon-comment icon-white"></i> {L_POST_REPLY}
+					<!-- ENDIF -->
+				</a>
+			<!-- ENDIF -->
 		<!-- ENDIF -->
-	</div></div>
-<!-- ENDIF -->
+
+	</div>
+</div>
 
 <!-- INCLUDE misc/pagination.html -->
 

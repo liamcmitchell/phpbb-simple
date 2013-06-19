@@ -24,10 +24,12 @@
   background-image: url("./bootstrap/img/glyphicons-halflings-white.png");
 }
 
-/* Set top margin in case there is no heading */
-#page-body {
-	margin-top:20px;
+.navbar {
 	margin-bottom:20px;
+}
+
+.footer {
+	margin-top:20px;
 }
 
 .navbar-user {
@@ -39,7 +41,7 @@
 	margin-bottom:0;
 }
 
-.unread .title {
+.unread .last-post {
 	font-weight:bold;
 }
 
@@ -49,11 +51,12 @@
 }
 
 .pagination {
-	margin:20px 0;
+	margin-top:0;
+	margin-bottom:20px;
 }
 
 .post {
-	margin:20px 0;
+	margin-bottom:20px;
 }
 
 .post-meta .unapproved,
@@ -73,7 +76,16 @@
 	max-height: 200px;
 }
 
-/* Landscape phone to portrait tablet */
+/* Fix inconsistent title margin */
+@media (max-width: 979px) {
+
+	.navbar .brand {
+		margin-left:-10px;
+	}
+
+}
+
+/* Bootstrap switches to single column */
 @media (max-width: 767px) {
 
 	/* Original 30px too big */
@@ -87,6 +99,22 @@
 
 	.post-meta .date {
 		float:right;
+	}
+
+}
+
+/* Remove items on very narrow screens */
+@media (max-width: 480px) {
+
+	.navbar-search {
+		display:none;
+	}
+
+	th.topics, td.topics,
+	th.posts, td.posts,
+	th.replies, td.replies,
+	th.views, td.views {
+		display:none;
 	}
 
 }

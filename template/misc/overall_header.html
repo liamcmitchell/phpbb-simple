@@ -79,17 +79,16 @@
 
   <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
+    <a id="top" accesskey="t"></a>
+
     <!-- INCLUDE misc/navbar.html -->
 
     <div class="container-fluid">
-      <a id="top" accesskey="t"></a>
-      
-      <div id="page-body">
 
-        <!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-          <div id="information" class=" row-fluid rules">
-            <div class="well">
-              <strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
-            </div>
+      <!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+        <div id="information" class=" row-fluid rules">
+          <div class="well">
+            <strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
           </div>
-        <!-- ENDIF -->
+        </div>
+      <!-- ENDIF -->

@@ -1,29 +1,34 @@
 <!-- INCLUDE misc/overall_header.html -->
 
-<div class="page-header">
-	<h1>
-		<!-- IF TOPIC_TITLE -->
-			{TOPIC_TITLE}
-		<!-- ELSE -->
-			{FORUM_NAME}<!-- IF FORUM_DESC --> <small>{FORUM_DESC}</small><!-- ENDIF -->
+<div class="row-fluid">
+	<div class="span8 offset2">
+
+		<div>
+			<!-- IF TOPIC_TITLE -->
+				<h1>{TOPIC_TITLE}</h1>
+			<!-- ELSE -->
+				<h1>{FORUM_NAME}</h1>
+				<!-- IF FORUM_DESC --><p class="lead">{FORUM_DESC}</p><!-- ENDIF -->
+			<!-- ENDIF -->
+		</div>
+
+		<!-- INCLUDE misc/breadcrumb.html -->
+
+		<!-- INCLUDE misc/rules.html -->
+
+		<!-- IF S_DRAFT_LOADED -->
+			<div class="alert">
+				<strong>{L_INFORMATION}</strong><br>
+				{L_DRAFT_LOADED}
+			</div>
 		<!-- ENDIF -->
-	</h1>
-</div>
 
-<!-- INCLUDE misc/breadcrumb.html -->
+		<h2>{L_POST_A}</h2>
 
-<!-- INCLUDE misc/rules.html -->
+		<!-- IF S_SHOW_DRAFTS --><!-- INCLUDE misc/drafts.html --><!-- ENDIF -->
 
-<!-- IF S_DRAFT_LOADED -->
-	<div class="alert">
-		<strong>{L_INFORMATION}</strong><br>
-		{L_DRAFT_LOADED}
 	</div>
-<!-- ENDIF -->
-
-<h2>{L_POST_A}</h2>
-
-<!-- IF S_SHOW_DRAFTS --><!-- INCLUDE misc/drafts.html --><!-- ENDIF -->
+</div>
 
 <!-- IF S_DISPLAY_PREVIEW --><!-- INCLUDE posting_preview.html --><!-- ENDIF -->
 
