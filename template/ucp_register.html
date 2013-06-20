@@ -24,11 +24,11 @@
 		<h1>{SITENAME} - {L_REGISTRATION}</h1>
 		<hr>
 
+		<!-- IF L_REG_COND --><p>{L_REG_COND}</p><!-- ENDIF -->
+
 		<!-- IF ERROR --><div class="alert alert-error">{ERROR}</div><!-- ENDIF -->
 
 		<form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
-
-			<!-- IF L_REG_COND --><strong>{L_REG_COND}</strong><!-- ENDIF -->
 			
 			<div class="control-group">
 				<label class="control-label" for="username">{L_USERNAME}:</label>
