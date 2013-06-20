@@ -6,11 +6,11 @@
 	<!-- ENDIF -->
 
 	<label for="{USERNAME_CREDENTIAL}">{L_USERNAME}:</label>
-	<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}">
+	<input type="text" class="input-block-level" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}">
 	
 	
 	<label for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}:</label>
-	<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25">
+	<input type="password" class="input-block-level" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25">
 
 	<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
 		<!-- IF U_SEND_PASSWORD --><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a><!-- ENDIF -->
@@ -31,7 +31,7 @@
 			</label>
 		<!-- ENDIF -->
 		
-		<label for="viewonline" class="checkbox">
+		<label for="viewonline" class="checkbox margin-bottom">
 			<input type="checkbox" name="viewonline" id="viewonline" tabindex="5">
 			{L_HIDE_ME}
 		</label>
@@ -42,6 +42,8 @@
 
 	{S_HIDDEN_FIELDS}
 
-	<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary">
+	<div>
+		<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary">
+	</div>
 	
 </form>

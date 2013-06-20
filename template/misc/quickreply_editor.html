@@ -1,6 +1,7 @@
 <!-- IF S_QUICK_REPLY -->
 	<form method="post" action="{U_QR_ACTION}">
 		<h3>{L_QUICKREPLY}</h3>
+		<input type="hidden" name="subject" value="{SUBJECT}">
 		<textarea name="message" rows="4" tabindex="3" class="input-block-level"></textarea>
 		{S_FORM_TOKEN}
 		{QR_HIDDEN_FIELDS}

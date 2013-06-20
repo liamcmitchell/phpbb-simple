@@ -4,7 +4,7 @@
   	<!-- DEFINE $UNREAD = 'unread' -->
   <!-- ENDIF -->
 
-	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW  or forumrow.S_NO_CAT  -->
+	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW or forumrow.S_NO_CAT -->
 		<table class="forum-list table table-striped">
 			<thead>
 				<tr>
@@ -20,7 +20,7 @@
 	<!-- IF not forumrow.S_IS_CAT -->
 		<tr class="{$UNREAD}">
 			<td class="title">
-				<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
+				<!-- IF forumrow.FORUM_IMAGE --><span>{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 				<a href="{forumrow.U_VIEWFORUM}" class="title">{forumrow.FORUM_NAME}</a>
 				<!-- IF forumrow.U_UNAPPROVED_TOPICS --> <a class="unapproved-topics" href="{forumrow.U_UNAPPROVED_TOPICS}">Unapproved topics</a><!-- ENDIF -->
 				<!-- IF forumrow.FORUM_DESC --><br><span class="muted">{forumrow.FORUM_DESC}</span><!-- ENDIF -->
@@ -33,11 +33,13 @@
 				<td class="posts"><span>{forumrow.POSTS}</span></td>
 				<td class="last-post">
 					<!-- IF forumrow.LAST_POST_TIME -->
-						<a class="last-post" href="{forumrow.U_LAST_POST}" title="{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER}">{forumrow.LAST_POST_TIME}</a>
+						<a class="last-post" href="{forumrow.U_LAST_POST}" title="{forumrow.LAST_POST_SUBJECT} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER}">{forumrow.LAST_POST_SUBJECT}</a>
 					<!-- ELSE -->
 						{L_NO_POSTS}
 					<!-- ENDIF -->
 				</td>
+			<!-- ELSE -->
+				<td colspan="3"></td>
 			<!-- ENDIF -->
 		</tr>
 	<!-- ENDIF -->

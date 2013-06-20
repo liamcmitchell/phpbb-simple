@@ -105,19 +105,14 @@
 
 		<!-- IF not S_PRIVMSGS and S_DISPLAY_USERNAME -->
 			<label for="username">{L_USERNAME}:</label>
-			<input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" />
+			<input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}">
 		<!-- ENDIF -->
 
-		<!-- IF ((S_POST_ACTION or S_EDIT_DRAFT) and not TOPIC_TITLE) or S_PRIVMSGS -->
+		<!-- IF not TOPIC_TITLE or (SUBJECT == TOPIC_TITLE) or S_PRIVMSGS -->
 			<input type="text" name="subject" maxlength="60" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="input-block-level" placeholder="{L_SUBJECT}">
-			<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
-				<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
-				<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
-			<!-- ENDIF -->
-		<!-- ELSEIF S_POST_ACTION or S_EDIT_DRAFT -->
+		<!-- ELSEIF SUBJECT or DRAFT_SUBJECT -->
 			<input type="hidden" name="subject" value="{SUBJECT}{DRAFT_SUBJECT}">
 		<!-- ENDIF -->
-
 
 		<!-- INCLUDE posting_buttons.html -->
 	</div>
@@ -271,6 +266,12 @@
 		<!-- ENDIF -->
 
 		<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
+
+			<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+				<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+				<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+			<!-- ENDIF -->
+
 			<div class="form-actions" id="submit">
 				{S_HIDDEN_ADDRESS_FIELD}
 				{S_HIDDEN_FIELDS}
