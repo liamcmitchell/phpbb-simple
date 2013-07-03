@@ -23,16 +23,20 @@
 
 		<div id="pr{topic_review_row.POST_ID}" class="row-fluid post">
 
-			<div class="post-meta span2 muted">
-				<div class="author">
-					{topic_review_row.POST_AUTHOR_FULL}
-				</div>
-				<div class="date">
-					{topic_review_row.POST_DATE}
-				</div>
-			</div>
+			<div class="post-body span8 offset2">
 
-			<div class="post-body span8">
+				<div class="post-meta clearfix">
+
+					<div class="author">
+						{topic_review_row.POST_AUTHOR_FULL}
+					</div>
+
+					<div class="date muted">
+						{topic_review_row.POST_DATE}
+					</div>
+
+				</div>
+
 				<div class="content">{topic_review_row.MESSAGE}</div>
 
 				<!-- IF topic_review_row.S_HAS_ATTACHMENTS -->

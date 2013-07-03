@@ -2,42 +2,10 @@
 
 <div class="row-fluid">
 	<div class="span8 offset2">
-		<div>
 
-			<!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or S_TOPIC_MOD -->
-				<div class="btn-group pull-right">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
-				    <i class="icon-cog"></i> <span class="caret"></span>
-				  </a>
-				  <ul class="dropdown-menu">
-				  	<!-- IF U_WATCH_TOPIC -->
-							<li><a href="{U_WATCH_TOPIC}"><i class="icon-eye-open"></i> {L_WATCH_TOPIC}</a>					</li>
-						<!-- ENDIF -->
-				  	<!-- IF U_BOOKMARK_TOPIC -->
-							<li><a href="{U_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a></li>
-						<!-- ENDIF -->
-				  	<!-- IF U_BUMP_TOPIC -->
-				  		<li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li>
-				  	<!-- ENDIF -->
-				  	<!-- IF S_TOPIC_MOD -->
-							<li><a href="{S_MOD_ACTION}&action=lock">Lock topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=delete_topic">Delete topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=move">Move topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=split">Split topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=merge">Move posts</a></li>
-							<li><a href="{S_MOD_ACTION}&action=merge_topic">Merge topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=fork">Copy topic</a></li>
-							<li><a href="{S_MOD_ACTION}&action=make_normal">Change to standard</a></li>
-							<li><a href="{S_MOD_ACTION}&action=make_announce">Change to announcement</a></li>
-							<li><a href="{S_MOD_ACTION}&action=make_global">Change to global</a></li>
-							<li><a href="{S_MOD_ACTION}&action=topic_logs">View logs</a></li>
-						<!-- ENDIF -->
-					</ul>
-				</div>
-			<!-- ENDIF -->
+		<!-- INCLUDE misc/page_controls.html -->
 
-			<h1>{TOPIC_TITLE}</h1>
-		</div>
+		<h1>{TOPIC_TITLE}</h1>
 
 		<!-- INCLUDE misc/breadcrumb.html -->
 
@@ -55,28 +23,60 @@
 
 		<div id="p{postrow.POST_ID}" class="row-fluid post">
 
-			<div class="post-meta span2 muted">
-				<div class="author">
-					{postrow.POST_AUTHOR_FULL}
-				</div>
-				<div class="date">
-					{postrow.POST_DATE}
-				</div>
-				<!-- IF postrow.S_POST_UNAPPROVED -->
-					<div class="unapproved"><a class="text-warning" href="{postrow.U_MCP_APPROVE}"><i class="icon-question-sign"></i> {L_POST_UNAPPROVED}</a></div>
-				<!-- ENDIF -->
-				<!-- IF postrow.S_POST_REPORTED -->
-					<div class="reported"><a class="text-error" href="{postrow.U_MCP_REPORT}"><i class="icon-exclamation-sign"></i> {L_POST_REPORTED}</a></div>
-				<!-- ENDIF -->
-			</div>
-
-			<div class="post-body span8">
+			<div class="post-body span8 offset2">
 
 				<!-- IF postrow.S_IGNORE_POST -->
 
 					<div class="ignore">{postrow.L_IGNORE_POST}</div>
 
 				<!-- ELSE -->
+
+					<div class="post-meta clearfix">
+
+						<div class="author">
+							{postrow.POST_AUTHOR_FULL}
+						</div>
+
+						<!-- IF not S_IS_BOT and (postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE) -->
+							<div class="controls btn-group">
+								<!-- IF postrow.U_QUOTE -->
+									<a class="btn btn-mini" href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}"><i class="icon-share-alt"></i></a>
+								<!-- ENDIF -->
+								<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#" title="Post controls">
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							  	<!-- IF postrow.U_EDIT -->
+										<li><a href="{postrow.U_EDIT}"><i class="icon-pencil"></i> {L_EDIT_POST}</a></li>
+									<!-- ENDIF -->
+									<!-- IF postrow.U_DELETE -->
+										<li><a href="{postrow.U_DELETE}"><i class="icon-trash"></i> {L_DELETE_POST}</a></li>
+									<!-- ENDIF -->
+									<!-- IF postrow.U_REPORT -->
+										<li><a href="{postrow.U_REPORT}"><i class="icon-exclamation-sign"></i> {L_REPORT_POST}</a></li>
+									<!-- ENDIF -->
+									<!-- IF postrow.U_WARN -->
+										<li><a href="{postrow.U_WARN}"><i class="icon-exclamation-sign"></i> {L_WARN_USER}</a></li>
+									<!-- ENDIF -->
+									<!-- IF postrow.U_INFO -->
+										<li><a href="{postrow.U_INFO}"><i class="icon-info-sign"></i> {L_INFORMATION}</a></li>
+									<!-- ENDIF -->
+								</ul>
+							</div>
+						<!-- ENDIF -->
+
+						<div class="date muted">
+							{postrow.POST_DATE}
+						</div>
+
+						<!-- IF postrow.S_POST_UNAPPROVED -->
+							<div class="unapproved"><a class="text-warning" href="{postrow.U_MCP_APPROVE}"><i class="icon-question-sign"></i> {L_POST_UNAPPROVED}</a></div>
+						<!-- ENDIF -->
+						<!-- IF postrow.S_POST_REPORTED -->
+							<div class="reported"><a class="text-error" href="{postrow.U_MCP_REPORT}"><i class="icon-exclamation-sign"></i> {L_POST_REPORTED}</a></div>
+						<!-- ENDIF -->
+
+					</div>
 
 					<div class="content">{postrow.MESSAGE}</div>
 
@@ -95,8 +95,8 @@
 
 					<!-- IF postrow.S_DISPLAY_NOTICE --><div>{L_DOWNLOAD_NOTICE}</div><!-- ENDIF -->
 
-					<!-- IF postrow.BUMPED_MESSAGE --><p class="muted">{postrow.BUMPED_MESSAGE}</p><!-- ENDIF -->
-					<!-- IF postrow.SIGNATURE --><p class="muted">{postrow.SIGNATURE}</p><!-- ENDIF -->
+					<!-- IF postrow.BUMPED_MESSAGE --><div class="muted">{postrow.BUMPED_MESSAGE}</div><!-- ENDIF -->
+					<!-- IF postrow.SIGNATURE --><div class="muted">{postrow.SIGNATURE}</div><!-- ENDIF -->
 
 					<!-- IF postrow.EDITED_MESSAGE or postrow.EDIT_REASON -->
 						<div class="muted">
@@ -105,38 +105,6 @@
 						</div>
 					<!-- ENDIF -->
 				
-				<!-- ENDIF -->
-
-			</div>
-
-			<div class="span2">
-
-				<!-- IF not S_IS_BOT and (postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE) -->
-					<div class="btn-group pull-right post-controls">
-						<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#" title="Post tools">
-					    <i class="icon-cog"></i> <span class="caret"></span>
-					  </a>
-					  <ul class="dropdown-menu">
-							<!-- IF postrow.U_EDIT -->
-								<li><a href="{postrow.U_EDIT}"><i class="icon-pencil"></i> {L_EDIT_POST}</a></li>
-							<!-- ENDIF -->
-							<!-- IF postrow.U_DELETE -->
-								<li><a href="{postrow.U_DELETE}"><i class="icon-trash"></i> {L_DELETE_POST}</a></li>
-							<!-- ENDIF -->
-							<!-- IF postrow.U_REPORT -->
-								<li><a href="{postrow.U_REPORT}"><i class="icon-exclamation-sign"></i> {L_REPORT_POST}</a></li>
-							<!-- ENDIF -->
-							<!-- IF postrow.U_WARN -->
-								<li><a href="{postrow.U_WARN}"><i class="icon-exclamation-sign"></i> {L_WARN_USER}</a></li>
-							<!-- ENDIF -->
-							<!-- IF postrow.U_INFO -->
-								<li><a href="{postrow.U_INFO}"><i class="icon-info-sign"></i> {L_INFORMATION}</a></li>
-							<!-- ENDIF -->
-							<!-- IF postrow.U_QUOTE -->
-								<li><a href="{postrow.U_QUOTE}"><i class="icon-share-alt"></i> {L_REPLY_WITH_QUOTE}</a></li>
-							<!-- ENDIF -->
-						</ul>
-					</div>
 				<!-- ENDIF -->
 
 			</div>

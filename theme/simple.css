@@ -41,6 +41,10 @@
 	margin-bottom:0;
 }
 
+#page-controls {
+	margin-top:10px;
+}
+
 .unread .last-post {
 	font-weight:bold;
 }
@@ -59,9 +63,16 @@
 	margin-bottom:20px;
 }
 
+.post-meta .author {
+	float:left;
+}
+
 .post-meta .unapproved,
-.post-meta .reported {
-	clear:both;
+.post-meta .reported,
+.post-meta .controls,
+.post-meta .date {
+	float:right;
+	margin-left:10px;
 }
 
 .margin-bottom {
@@ -74,14 +85,6 @@
 
 .attachments img {
 	max-height: 200px;
-}
-
-@media (min-width: 768px) {
-
-	.post-meta {
-		text-align: right;
-	}
-
 }
 
 /* Fix inconsistent title margin */

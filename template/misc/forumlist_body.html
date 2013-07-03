@@ -23,7 +23,7 @@
 				<!-- IF forumrow.FORUM_IMAGE --><span>{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 				<a href="{forumrow.U_VIEWFORUM}" class="title">{forumrow.FORUM_NAME}</a>
 				<!-- IF forumrow.U_UNAPPROVED_TOPICS --> <a class="unapproved-topics" href="{forumrow.U_UNAPPROVED_TOPICS}">Unapproved topics</a><!-- ENDIF -->
-				<!-- IF forumrow.FORUM_DESC --><br><span class="muted">{forumrow.FORUM_DESC}</span><!-- ENDIF -->
+				<!-- IF forumrow.FORUM_DESC --><div class="description">{forumrow.FORUM_DESC}</div><!-- ENDIF -->
 				<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br>{forumrow.L_SUBFORUM_STR} {forumrow.SUBFORUMS}<!-- ENDIF -->
 			</td>
 			<!-- IF forumrow.CLICKS -->

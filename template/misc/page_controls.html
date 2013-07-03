@@ -1,0 +1,45 @@
+<!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or S_TOPIC_MOD or U_MCP or U_MARK_FORUMS or S_WATCH_FORUM_LINK -->
+	<div id="page-controls" class="btn-group pull-right">
+		<!-- IF U_WATCH_TOPIC -->
+			<a class="btn" href="{U_WATCH_TOPIC}"><i class="icon-eye-open"></i> {L_WATCH_TOPIC}</a>
+		<!-- ENDIF -->
+		<!-- IF U_BOOKMARK_TOPIC -->
+  		<!-- IF L_BOOKMARK_TOPIC == 'Remove from bookmarks' -->
+  			<!-- DEFINE $BOOKMARK = 'active' -->
+  		<!-- ENDIF -->
+			<a class="btn {$BOOKMARK}" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i></a>
+		<!-- ENDIF -->
+		<!-- IF U_BUMP_TOPIC -->
+  		<a class="btn" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a>
+  	<!-- ENDIF -->
+		<!-- IF S_WATCH_FORUM_LINK -->
+  		<a class="btn" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="icon-eye-open"></i></a>
+  	<!-- ENDIF -->
+  	<!-- IF U_MARK_FORUMS -->
+			<a class="btn" href="{U_MARK_FORUMS}" title="{L_MARK_FORUMS_READ}"><i class="icon-eye-close"></i></a>
+		<!-- ENDIF -->
+		<!-- IF U_MCP or S_TOPIC_MOD -->
+			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic controls">
+		    <span class="caret"></span>
+		  </a>
+		  <ul class="dropdown-menu pull-right">
+		  	<!-- IF U_MCP -->
+					<li><a href="{U_MCP}"><i class="icon-check"></i> {L_MCP}</a></li>
+				<!-- ENDIF -->
+				<!-- IF S_TOPIC_MOD -->
+					<li><a href="{S_MOD_ACTION}&action=lock">Lock topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=delete_topic">Delete topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=move">Move topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=split">Split topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=merge">Move posts</a></li>
+					<li><a href="{S_MOD_ACTION}&action=merge_topic">Merge topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=fork">Copy topic</a></li>
+					<li><a href="{S_MOD_ACTION}&action=make_normal">Change to standard</a></li>
+					<li><a href="{S_MOD_ACTION}&action=make_announce">Change to announcement</a></li>
+					<li><a href="{S_MOD_ACTION}&action=make_global">Change to global</a></li>
+					<li><a href="{S_MOD_ACTION}&action=topic_logs">View logs</a></li>
+				<!-- ENDIF -->
+			</ul>
+		<!-- ENDIF -->
+	</div>
+<!-- ENDIF -->

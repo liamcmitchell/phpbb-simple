@@ -10,16 +10,19 @@
 	
 	<div id="p{postrow.POST_ID}" class="row-fluid post">
 
-		<div class="post-meta span2 muted">
-			<div class="author">
-				{S_USERNAME}
-			</div>
-			<div class="date">
-				{LAST_VISIT_YOU}
-			</div>
-		</div>
+		<div class="post-body span8 offset2">
 
-		<div class="post-body span8">
+			<div class="post-meta clearfix">
+
+				<div class="author">
+					{S_USERNAME}
+				</div>
+
+				<div class="date muted">
+					{LAST_VISIT_YOU}
+				</div>
+
+			</div>
 
 			<div class="content">{PREVIEW_MESSAGE}</div>
 

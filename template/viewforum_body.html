@@ -3,32 +3,10 @@
 <div class="row-fluid">
 	<div class="span8 offset2">
 
-		<div>
+		<!-- INCLUDE misc/page_controls.html -->
 
-			<!-- IF U_MCP or U_MARK_FORUMS or S_WATCH_FORUM_LINK -->
-				<div class="btn-group pull-right">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Topic tools">
-				    <i class="icon-cog"></i> <span class="caret"></span>
-				  </a>
-				  <ul class="dropdown-menu">
-				  	<!-- IF S_WATCH_FORUM_LINK -->
-				  		<li><a href="{S_WATCH_FORUM_LINK}"><i class="icon-eye-open"></i> {S_WATCH_FORUM_TITLE}</a></li>
-				  	<!-- ENDIF -->
-				  	<!-- IF U_MARK_FORUMS -->
-							<li><a href="{U_MARK_FORUMS}"><i class="icon-eye-close"></i> {L_MARK_FORUMS_READ}</a></li>
-						<!-- ENDIF -->
-				  	<!-- IF U_MCP -->
-							<li>
-								<a href="{U_MCP}"><i class="icon-wrench"></i> {L_MCP}</a></li>
-							</li>
-						<!-- ENDIF -->
-					</ul>
-				</div>
-			<!-- ENDIF -->
-
-			<h1>{FORUM_NAME}</h1>
-			<!-- IF FORUM_DESC --><p class="lead">{FORUM_DESC}</p><!-- ENDIF -->
-		</div>
+		<h1>{FORUM_NAME}</h1>
+		<!-- IF FORUM_DESC --><p class="lead">{FORUM_DESC}</p><!-- ENDIF -->
 
 		<!-- INCLUDE misc/breadcrumb.html -->
 
