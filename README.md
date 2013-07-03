@@ -7,6 +7,6 @@ This is a work in progress. Because so much of the original HTML has been modifi
 
 [proBoot](http://shibulijack.github.io/proBoot/) was used as a base to start with.
 
-**Style Version:** 1.0
+Theme used at [Akita JET Board](http://akitajet.com/phpbb/index.php)
 
 **phpBB version:** phpBB 3.0.11
