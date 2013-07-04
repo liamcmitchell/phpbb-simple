@@ -1,7 +1,7 @@
 <!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or S_TOPIC_MOD or U_MCP or U_MARK_FORUMS or S_WATCH_FORUM_LINK -->
 	<div id="page-controls" class="btn-group pull-right">
 		<!-- IF U_WATCH_TOPIC -->
-			<a class="btn" href="{U_WATCH_TOPIC}"><i class="icon-eye-open"></i> {L_WATCH_TOPIC}</a>
+			<a class="btn" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="icon-eye-open"></i></a>
 		<!-- ENDIF -->
 		<!-- IF U_BOOKMARK_TOPIC -->
   		<!-- IF L_BOOKMARK_TOPIC == 'Remove from bookmarks' -->
@@ -10,7 +10,7 @@
 			<a class="btn {$BOOKMARK}" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i></a>
 		<!-- ENDIF -->
 		<!-- IF U_BUMP_TOPIC -->
-  		<a class="btn" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a>
+  		<a class="btn" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-bullhorn"></i></a>
   	<!-- ENDIF -->
 		<!-- IF S_WATCH_FORUM_LINK -->
   		<a class="btn" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="icon-eye-open"></i></a>
