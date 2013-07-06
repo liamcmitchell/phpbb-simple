@@ -45,7 +45,7 @@
 	margin-top:10px;
 }
 
-.unread .last-post {
+.unread a.last-post {
 	font-weight:bold;
 }
 
