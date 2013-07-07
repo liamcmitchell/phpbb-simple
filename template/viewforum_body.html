@@ -42,49 +42,48 @@
 
 			<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->		
 				<table class="topic-list table table-striped">
-				<thead>
-					<tr>
-						
+					<thead>
+						<tr>
 							<th class="title"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
 							<th class="replies">{L_REPLIES}</th>
 							<th class="views">{L_VIEWS}</th>
 							<th class="last-post"><span>{L_LAST_POST}</span></th>
-						
-					</tr>
-				</thead>
-				<tbody>
+						</tr>
+					</thead>
+					<tbody>
 			<!-- ENDIF -->
-				<!-- IF topicrow.S_TOPIC_REPORTED --><!-- ENDIF -->
-				<!-- IF topicrow.S_UNREAD_TOPIC -->
-					<!-- DEFINE $UNREAD = 'unread' -->
-				<!-- ENDIF -->
-				<tr class="{$UNREAD}">
-						<td class="title">
-							<div class="pull-right">
-								<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-									<span><a href="{topicrow.U_MCP_QUEUE}" title="Unapproved content"><i class="icon-question-sign"></i></a></span>
-								<!-- ENDIF -->
-								<!-- IF topicrow.S_TOPIC_REPORTED -->
-									<span><a href="{topicrow.U_MCP_REPORT}" title="Reported content"><i class="icon-exclamation-sign"></i></a></span>
-								<!-- ENDIF -->
-							</div>
-							<!-- IF topicrow.S_POST_GLOBAL -->
-								<i class="icon-globe"></i>
+
+			<!-- IF topicrow.S_UNREAD_TOPIC -->
+				<!-- DEFINE $UNREAD = 'unread' -->
+			<!-- ENDIF -->
+			
+			<tr class="{$UNREAD}">
+					<td class="title">
+						<div class="pull-right">
+							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+								<span><a href="{topicrow.U_MCP_QUEUE}" title="Unapproved content"><i class="icon-question-sign"></i></a></span>
 							<!-- ENDIF -->
-							<!-- IF topicrow.S_POST_ANNOUNCE -->
-								<i class="icon-bell"></i>
+							<!-- IF topicrow.S_TOPIC_REPORTED -->
+								<span><a href="{topicrow.U_MCP_REPORT}" title="Reported content"><i class="icon-exclamation-sign"></i></a></span>
 							<!-- ENDIF -->
-							<!-- IF topicrow.S_POST_STICKY -->
-								<i class="icon-flag"></i>
-							<!-- ENDIF -->
-							<a href="{topicrow.U_VIEW_TOPIC}" class="title">{topicrow.TOPIC_TITLE}</a>
-						</td>
-						<td class="replies"><span>{topicrow.REPLIES}</span></td>
-						<td class="views"><span>{topicrow.VIEWS}</span></td>
-						<td class="last-post">
-							<a class="last-post" href="{topicrow.U_LAST_POST}" title="{topicrow.LAST_POST_SUBJECT} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR}">{topicrow.LAST_POST_TIME}</a>
-						</td>
-				</tr>
+						</div>
+						<!-- IF topicrow.S_POST_GLOBAL -->
+							<i class="icon-globe"></i>
+						<!-- ENDIF -->
+						<!-- IF topicrow.S_POST_ANNOUNCE -->
+							<i class="icon-bell"></i>
+						<!-- ENDIF -->
+						<!-- IF topicrow.S_POST_STICKY -->
+							<i class="icon-flag"></i>
+						<!-- ENDIF -->
+						<a href="{topicrow.U_VIEW_TOPIC}" class="title">{topicrow.TOPIC_TITLE}</a>
+					</td>
+					<td class="replies"><span>{topicrow.REPLIES}</span></td>
+					<td class="views"><span>{topicrow.VIEWS}</span></td>
+					<td class="last-post">
+						<a class="last-post" href="{topicrow.U_LAST_POST}" title="{topicrow.LAST_POST_SUBJECT} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR}">{topicrow.LAST_POST_TIME}</a>
+					</td>
+			</tr>
 
 			<!-- IF topicrow.S_LAST_ROW -->
 					</tbody>

@@ -1,5 +1,8 @@
 <ul class="breadcrumb">
   <li><a href="{U_INDEX}" title="{L_INDEX}"><i class="icon-home"></i></a></li>
+  <!-- IF S_IN_SEARCH or SEARCH_TITLE or SEARCH_MATCHES -->
+  	<li><span class="divider">/</span> <a href="{U_SEARCH}">{L_SEARCH}</a></li>
+  <!-- ENDIF -->
   <!-- BEGIN navlinks -->
   	<li><span class="divider">/</span> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
   <!-- END navlinks -->
